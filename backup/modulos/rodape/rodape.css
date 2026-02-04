@@ -1,0 +1,163 @@
+/* Módulo: Rodapé (Refinado) */
+
+#rodape-principal {
+    background-color: #0b0e14;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    color: #94a3b8;
+    position: relative;
+    z-index: 100;
+}
+
+.rodape-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: start;
+}
+
+/* Coluna 1: Marca */
+.brand-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.brand-icon {
+    color: var(--cor-primaria);
+    width: 24px;
+    height: 24px;
+}
+
+.brand-name {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0;
+    font-family: var(--fonte-titulo);
+}
+
+.brand-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 300px;
+    color: #94a3b8;
+}
+
+.social-row {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #1e293b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-btn:hover {
+    background-color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+/* Títulos */
+.coluna-titulo {
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* Lista Vertical */
+.lista-vertical {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-vertical li {
+    margin-bottom: 12px;
+}
+
+.lista-vertical a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+}
+
+.lista-vertical a:hover {
+    color: white;
+}
+
+/* Tags Cloud */
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-item {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+}
+
+/* Horário Card */
+.horario-card {
+    background-color: #161b25;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.horario-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.dia,
+.hora {
+    color: white;
+    font-weight: 700;
+}
+
+/* Copyright */
+.copyright-area {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .rodape-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .rodape-grid {
+        grid-template-columns: 1fr;
+    }
+}

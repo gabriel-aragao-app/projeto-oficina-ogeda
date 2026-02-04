@@ -1,0 +1,183 @@
+/* Módulo: Sobre Nós */
+
+#sobre-nos {
+    background-color: var(--cor-fundo);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* =========================================
+   LADO ESQUERDO (Imagem)
+   ========================================= */
+.sobre-imagem-wrapper {
+    position: relative;
+    flex: 1;
+    min-height: 500px;
+}
+
+.img-mecanicos {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    /* Slight roundness */
+    filter: grayscale(100%) contrast(1.1);
+    /* Efeito P&B Premium */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Flutuante "Dono da Rua" */
+.float-card {
+    position: absolute;
+    bottom: 40px;
+    right: -30px;
+    /* Overlap right */
+    background-color: #111;
+    padding: 20px 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 2;
+}
+
+.icon-check-box {
+    width: 40px;
+    height: 40px;
+    background-color: #22c55e;
+    /* Verde Sucesso */
+    border-radius: 4px;
+    /* Quadrado com leve raio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: skewX(-5deg);
+}
+
+.float-card-content h4 {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.float-card-content span {
+    color: #94a3b8;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* =========================================
+   LADO DIREITO (Texto)
+   ========================================= */
+.sobre-conteudo {
+    flex: 1;
+}
+
+.label-autoridade {
+    color: var(--cor-primaria);
+    /* Azul */
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.sobre-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.sobre-texto {
+    color: #94a3b8;
+    /* Slate 400 */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+/* Gride de Features (Diagnóstico / Treinamento) */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.feature-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--cor-primaria-brilho);
+    /* Azul claro */
+}
+
+.feature-text h5 {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    font-style: italic;
+}
+
+.feature-text p {
+    color: #475569;
+    /* Slate 600 - texto escuro subtil */
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .sobre-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .sobre-imagem-wrapper {
+        min-height: 300px;
+        width: 100%;
+    }
+
+    .float-card {
+        right: 20px;
+        bottom: -20px;
+    }
+
+    .sobre-titulo {
+        font-size: 2.2rem;
+    }
+}

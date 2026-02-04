@@ -1,0 +1,184 @@
+/* Módulo: Catálogo de Serviços */
+
+#catalogo-servicos {
+    background-color: #0B0E14;
+    /* Quase preto, fundo da seção */
+    padding: 100px 0;
+}
+
+.catalogo-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.catalogo-titulo {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.catalogo-linha {
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-primaria);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Grid Principal */
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Base Card Estilo */
+.catalogo-card {
+    background-color: #151921;
+    /* Card escuro */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+.catalogo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ícone com Container Inclinado */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transform: skewX(-10deg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon-svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--cor-primaria);
+    stroke-width: 2;
+    fill: none;
+    transform: skewX(10deg);
+    /* Des-inclinar ícone */
+}
+
+/* Título do Card */
+.card-titulo {
+    font-family: var(--fonte-titulo);
+    color: white;
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Descrição */
+.card-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Lista de Features */
+.card-lista {
+    margin-top: auto;
+    /* Empurra para baixo */
+}
+
+.card-lista li {
+    font-size: 0.75rem;
+    color: var(--cor-primaria);
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-lista li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: var(--cor-primaria);
+    border-radius: 50%;
+}
+
+/* CARD DESTAQUE AZUL (Manutenção Preventiva) */
+.card-destaque-azul {
+    background-color: var(--cor-primaria);
+    /* Azul vibrante */
+    border: none;
+}
+
+.card-destaque-azul .icon-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-destaque-azul .icon-svg {
+    stroke: white;
+}
+
+.card-destaque-azul .card-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-ver-planos {
+    background-color: white;
+    color: var(--cor-primaria);
+    width: 100%;
+    padding: 15px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: transform 0.2s;
+}
+
+.btn-ver-planos:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card com leve destaque de borda ou forma (Troca Sucção) */
+/* Na imagem, parece apenas ter um padding diferente ou efeito visual, o CSS base cobre bem */
+/* Mas visualmente parece que o 3º card da 1ª linha tem uma rotação ou perspectiva diferente na imagem de referência... ah, não, é apenas o design "skew" que pode ser aplicado ao card todo se quisermos. Vamos manter o padrão limpo por enquanto. */
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .catalogo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .catalogo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo-titulo {
+        font-size: 2rem;
+    }
+}

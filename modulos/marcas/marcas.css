@@ -1,0 +1,135 @@
+/* Módulo: Marcas (Carrossel Infinito) */
+
+#sessao-marcas {
+    background-color: #0F172A;
+    /* Um tom ligeiramente diferente para separar visualmente ou manter o mesmo do footer */
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.marcas-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.marcas-titulo {
+    color: var(--cor-texto-secundario);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    opacity: 0.7;
+}
+
+/* Área do Carrossel */
+.carrossel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Máscaras de gradiente para suavizar bordas */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.carrossel-trilho {
+    display: flex;
+    gap: 80px;
+    /* Espaçamento entre as marcas */
+    width: max-content;
+    /* Animação definida no CSS global ou aqui */
+    animation: scrollInfinito 30s linear infinite;
+}
+
+/* Pausar animação ao passar o mouse */
+.carrossel-trilho:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollInfinito {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move metade se o conteúdo estiver duplicado */
+    }
+}
+
+/* Estilo das Marcas (Logotipos em Texto) */
+.marca-item {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.3);
+    /* Cor desbotada */
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.marca-item:hover {
+    color: var(--cor-primaria-brilho);
+    /* Destaque ao passar o mouse */
+    text-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+}
+
+/* Variações de Fonte para simular logotipos reais */
+.marca-fiat {
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.marca-jeep {
+    font-family: monospace;
+    letter-spacing: -1px;
+}
+
+.marca-volkswagen {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.marca-ford {
+    font-style: italic;
+    font-family: serif;
+}
+
+.marca-chevrolet {
+    font-weight: 800;
+    font-style: italic;
+}
+
+.marca-toyota {
+    letter-spacing: 2px;
+}
+
+.marca-hyundai {
+    font-style: italic;
+}
+
+.marca-honda {
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.marca-renault {
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carrossel-trilho {
+        gap: 40px;
+    }
+
+    .marca-item {
+        font-size: 1.5rem;
+    }
+}

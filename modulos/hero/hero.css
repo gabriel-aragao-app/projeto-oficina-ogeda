@@ -1,0 +1,290 @@
+/* Módulo: Hero (Restaurado) */
+
+#hero-section {
+    position: relative;
+    /* Compensação Header - padding-top: 140px;*/
+    background-color: var(--cor-fundo);
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    max-width: 100%;
+}
+
+/* Esquerda */
+.hero-esquerdo {
+    width: 45%;
+    z-index: 20;
+    padding-left: 10%;
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+.badget-label {
+    width: fit-content;
+    background-color: rgba(37, 99, 235, 0.15);
+    color: var(--cor-primaria);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.hero-titulo {
+    font-size: 4.2rem;
+    line-height: 0.90;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.hero-titulo .italic {
+    font-style: italic;
+    font-weight: 900;
+    color: white;
+}
+
+.hero-titulo .destaque-azul {
+    color: var(--cor-primaria);
+    font-style: italic;
+}
+
+.hero-descricao {
+    font-size: 1.1rem;
+    color: var(--cor-texto-secundario);
+    max-width: 480px;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 25px;
+}
+
+.btn-diagnostico {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    /* Leve corte */
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.btn-diagnostico:hover {
+    padding-right: 60px;
+    /* Efeito slide */
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.btn-servicos {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 32px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-servicos:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Direita (Imagem) */
+.hero-direito {
+    width: 45%;
+    position: relative;
+}
+
+.hero-imagem-container {
+    width: 120%;
+    height: 600px;
+    background-image: url('../../assets/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    /* Diagonal Image Cut - Ajuste Sutil */
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    position: relative;
+    /* border-left removido para integração fluida com o fundo */
+}
+
+/* Lista Serviços Bottom Stipe */
+.hero-servicos-lista {
+    margin-top: 80px;
+}
+
+.lista-titulo {
+    font-size: 0.8rem;
+    color: #475569;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    /* Rolagem horizontal */
+    padding-bottom: 10px;
+    /* Espaço para scrollbar */
+    max-width: 100%;
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: var(--cor-primaria) transparent;
+}
+
+/* Scrollbar Customizada (Webkit) */
+.cards-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria);
+    border-radius: 3px;
+}
+
+.servico-card {
+    width: 100px;
+    height: 120px;
+    background-color: #0f1218;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-primaria);
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+
+.servico-card:hover .card-bg {
+    opacity: 0.8;
+}
+
+.card-label {
+    position: relative;
+    z-index: 2;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: white;
+}
+
+.card-ver-todos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.plus-icon {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+}
+
+.ver-todos-text {
+    display: none;
+    /* Icone no mobile/small */
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    #hero-section {
+        flex-direction: column;
+        padding-top: 100px;
+        height: auto;
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-esquerdo {
+        width: 100%;
+        text-align: center;
+        /* Centralizar texto no mobile */
+        padding-bottom: 40px;
+    }
+
+    .hero-desc {
+        margin: 0 auto 40px auto;
+        /* Centraliza paragrafo */
+    }
+
+    .hero-botoes {
+        justify-content: center;
+        /* Centraliza botões */
+    }
+
+    .lista-titulo {
+        text-align: center;
+    }
+
+    .cards-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-direito {
+        width: 100%;
+        display: block;
+        /* Show image again */
+        margin-top: 20px;
+    }
+
+    .hero-imagem-container {
+        height: 300px;
+        /* Menor altura */
+        clip-path: none;
+        /* Remove corte complexo no mobile */
+        border-left: none;
+        border-top: 4px solid var(--cor-primaria);
+        border-radius: 10px;
+    }
+
+    .hero-titulo {
+        font-size: 3rem;
+    }
+}

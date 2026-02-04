@@ -1,0 +1,374 @@
+/* Módulo: Serviços Especializados */
+
+#servicos-especializados {
+    background-color: var(--cor-fundo);
+    padding: 100px 0;
+    position: relative;
+    z-index: 5;
+    /* Acima do Hero se houver overlap */
+}
+
+/* Cabeçalho da Seção */
+.servicos-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.subtitulo-label {
+    display: block;
+    color: var(--cor-primaria);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.titulo-principal {
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.titulo-principal .destaque-texto {
+    color: var(--cor-primaria-brilho);
+}
+
+.descricao-texto {
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+/* Grid de Cards */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr;
+    /* Esquerda menor que direita combinada? Ajuste visual: 1:1.5 ou 40:60 */
+    gap: 20px;
+    height: 500px;
+    /* Altura fixa para layout mosaico */
+}
+
+/* Ajuste Grid: O lado direito precisa ser dividido em Cima e Baixo (e baixo dividido em 2) */
+/* Mas CSS Grid puro pode fazer isso */
+
+.servicos-grid {
+    display: grid;
+    grid-template-areas:
+        "grande azul"
+        "grande baixo";
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 55% 45%;
+    gap: 20px;
+    height: 550px;
+}
+
+/* Área Grande Esquerda (Troca de Óleo) */
+.card-grande {
+    grid-area: grande;
+    position: relative;
+    border-radius: var(--borda-raio-medio);
+    overflow: hidden;
+    background-color: #111;
+}
+
+/* Área Azul Direita Superior (Injeção) */
+.card-azul {
+    grid-area: azul;
+    background-color: #0052FF;
+    /* Azul Intenso */
+    border-radius: var(--borda-raio-medio);
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Área Baixa Direita (Container para Preventiva e Scanner) */
+.container-baixo {
+    grid-area: baixo;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Card Preventiva */
+.card-preventiva {
+    background-color: #1e293b;
+    /* Dark Slate */
+    border-radius: var(--borda-raio-medio);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card Scanner */
+.card-scanner {
+    position: relative;
+    border-radius: var(--borda-raio-medio);
+    overflow: hidden;
+    background-color: #111;
+}
+
+.card-scanner .card-conteudo {
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    margin-bottom: -10px;
+    padding: 1.5rem;
+}
+
+.card-scanner .card-conteudo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.card-scanner .card-conteudo p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+/* Estilos Comuns de Card com Imagem de Fundo */
+.card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: -50px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    opacity: 0.6;
+}
+
+.card-grande:hover .card-bg-img,
+.card-scanner:hover .card-bg-img {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+.overlay-gradiente {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    z-index: 1;
+}
+
+/* Conteúdo interno dos cards */
+.card-conteudo {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+.tag-premium {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 1px;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    align-self: flex-start;
+    transform: skewX(-12deg);
+}
+
+h3.card-titulo {
+    /* Grande para Troca de Óleo */
+    color: white;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+}
+
+/* Card Azul Específico */
+.card-azul .card-bg-icon {
+    position: absolute;
+    right: -25px;
+    bottom: -25px;
+    width: 60%;
+    opacity: 0.4;
+    transform: rotate(-9deg);
+    z-index: -1;
+}
+
+.card-azul h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.card-azul p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+.btn-explorar {
+    background-color: white;
+    color: #0052FF;
+    border: none;
+    padding: 10px 25px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transform: skewX(-12deg);
+    align-self: flex-start;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-explorar:hover {
+    transform: skewX(-12deg) scale(1.05);
+}
+
+/* Card Preventiva Específico */
+.card-preventiva .card-conteudo {
+    align-items: center;
+    justify-content: end;
+    text-align: center;
+    margin-bottom: -10px;
+    padding: 0.1rem;
+}
+
+.card-preventiva h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.card-preventiva p {
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+
+
+
+/* Responsividade */
+/* Overrides Visual Card Grande (Tailwind Port) */
+.card-grande .card-conteudo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 3rem 0.5rem;
+    /* md:p-12 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* justify-end */
+    align-items: flex-start;
+    /* items-start */
+    text-align: left;
+    z-index: 10;
+}
+
+.card-grande h3.card-titulo {
+    font-size: 3rem;
+    /* text-5xl */
+    font-weight: 900;
+    /* font-black */
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card-grande .tag-premium {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 0.75rem;
+    /* text-xs */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    /* tracking-widest */
+    margin-bottom: 16px;
+    align-self: flex-start;
+    transform: none;
+    /* Reset skew */
+    border-radius: 0;
+}
+
+.card-grande .card-desc {
+    color: #d1d5db;
+    /* gray-300 */
+    font-size: 1rem;
+    line-height: 1.625;
+    max-width: 24rem;
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.5s ease 0.1s;
+}
+
+.card-grande:hover .card-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .servicos-grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .card-grande,
+    .card-azul,
+    .container-baixo {
+        height: 300px;
+        /* Altura mínima para mobile */
+        width: 100%;
+    }
+
+    .card-grande {
+        height: 400px;
+    }
+
+    .container-baixo {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* Stack preventive and scanner */
+        gap: 20px;
+        height: auto;
+    }
+
+    .card-preventiva,
+    .card-scanner {
+        height: 250px;
+    }
+}

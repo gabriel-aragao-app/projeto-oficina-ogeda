@@ -1,8 +1,8 @@
 /**
- * Módulo: Catálogo de Serviços
+ * Módulo: Catálogo de Serviços (SEO & UX Optimized)
  */
+import { CatalogoAnimacoes } from './catalogo-animacoes.js';
 
-// Ícones SVG Inline (Paths simplificados)
 const icons = {
     gear: '<path d="M12 2L12 4M12 20L12 22M4 12L2 12M22 12L20 12M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93M15 12A3 3 0 1 1 9 12A3 3 0 0 1 15 12Z" stroke-linecap="round" stroke-linejoin="round"/>',
     lightning: '<path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke-linecap="round" stroke-linejoin="round"/>',
@@ -13,88 +13,83 @@ const icons = {
 };
 
 const catalogoHTML = `
-    <section id="catalogo-servicos">
+    <section id="catalogo-servicos" aria-labelledby="cat-main-title">
         <div class="container">
             <div class="catalogo-header">
-                <h2 class="catalogo-titulo">Catálogo de Serviços</h2>
+                <h2 id="cat-main-title" class="catalogo-titulo">Serviços Especializados em Salvador</h2>
                 <div class="catalogo-linha"></div>
             </div>
 
-            <div class="catalogo-grid">
-                <!-- Card 1 -->
-                <div class="catalogo-card">
-                    <div class="icon-box">
+            <div class="catalogo-grid" role="list">
+                
+                <article class="catalogo-card" role="listitem">
+                    <div class="icon-box" aria-hidden="true">
                         <svg class="icon-svg" viewBox="0 0 24 24">${icons.gear}</svg>
                     </div>
                     <h3 class="card-titulo">CÂMBIO<br>AUTOMATIZADO</h3>
-                    <p class="card-desc">Especialista em Dualogic, iMotion e EasyR. Reparos hidráulicos e eletrônicos com precisão absoluta.</p>
+                    <p class="card-desc">Referência em <strong>Dualogic, iMotion e EasyR em Salvador</strong>. Diagnósticos precisos e reparos com peças originais.</p>
                     <ul class="card-lista">
-                        <li>Calibração Software</li>
+                        <li>Calibração via Software</li>
                         <li>Troca de Atuadores</li>
                     </ul>
-                </div>
+                </article>
 
-                <!-- Card 2 -->
-                <div class="catalogo-card">
-                    <div class="icon-box">
+                <article class="catalogo-card" role="listitem">
+                    <div class="icon-box" aria-hidden="true">
                         <svg class="icon-svg" viewBox="0 0 24 24">${icons.lightning}</svg>
                     </div>
-                    <h3 class="card-titulo">INJEÇÃO<br>DE PRECISÃO</h3>
-                    <p class="card-desc">Diagnóstico de bicos, sensores e módulos. Redução de consumo e restauração da potência original.</p>
+                    <h3 class="card-titulo">INJEÇÃO<br>ELETRÔNICA</h3>
+                    <p class="card-desc">Diagnóstico avançado de bicos e sensores. Redução de consumo para motoristas de aplicativo em Cajazeiras.</p>
                     <ul class="card-lista">
                         <li>Teste de Vazão</li>
                         <li>Limpeza Ultrassônica</li>
                     </ul>
-                </div>
+                </article>
 
-                <!-- Card 3 -->
-                <div class="catalogo-card">
-                    <div class="icon-box">
+                <article class="catalogo-card" role="listitem">
+                    <div class="icon-box" aria-hidden="true">
                         <svg class="icon-svg" viewBox="0 0 24 24">${icons.funnel}</svg>
                     </div>
-                    <h3 class="card-titulo">TROCA<br>POR SUCCÃO</h3>
-                    <p class="card-desc">Uso de equipamento de sucção a vácuo para garantir a remoção total de impurezas e óleo antigo.</p>
+                    <h3 class="card-titulo">TROCA DE ÓLEO<br>POR SUCÇÃO</h3>
+                    <p class="card-desc">Remoção total de impurezas com tecnologia a vácuo. O melhor cuidado para motores modernos em Salvador.</p>
                     <ul class="card-lista">
                         <li>Fluidos Premium</li>
-                        <li>Sem Contaminação</li>
+                        <li>Limpeza 100% do Sistema</li>
                     </ul>
-                </div>
+                </article>
 
-                <!-- Card 4 -->
-                <div class="catalogo-card">
-                    <div class="icon-box">
+                <article class="catalogo-card" role="listitem">
+                    <div class="icon-box" aria-hidden="true">
                         <svg class="icon-svg" viewBox="0 0 24 24">${icons.monitor}</svg>
                     </div>
-                    <h3 class="card-titulo">SCANNER<br>ÚLTIMA GERAÇÃO</h3>
-                    <p class="card-desc">Equipamentos atualizados para leitura em tempo real de todos os parâmetros do veículo.</p>
+                    <h3 class="card-titulo">DIAGNÓSTICO<br>COM SCANNER</h3>
+                    <p class="card-desc">Leitura em tempo real de parâmetros do veículo com equipamentos de última geração da Ogeda Car Tech.</p>
                     <ul class="card-lista">
                         <li>Histórico Digital</li>
-                        <li>Diagnóstico Guiado</li>
+                        <li>Check-up Computadorizado</li>
                     </ul>
-                </div>
+                </article>
 
-                <!-- Card 5 -->
-                <div class="catalogo-card">
-                    <div class="icon-box">
+                <article class="catalogo-card" role="listitem">
+                    <div class="icon-box" aria-hidden="true">
                         <svg class="icon-svg" viewBox="0 0 24 24">${icons.disc}</svg>
                     </div>
                     <h3 class="card-titulo">SUSPENSÃO<br>E FREIOS</h3>
-                    <p class="card-desc">Segurança em primeiro lugar. Revisão completa de amortecedores, discos e sistemas de ABS.</p>
+                    <p class="card-desc">Segurança garantida para as ruas de Salvador. Revisão de amortecedores, discos e sistemas de ABS.</p>
                     <ul class="card-lista">
                         <li>Check-up 30 itens</li>
-                        <li>Alinhamento Técnico</li>
+                        <li>Segurança Preventiva</li>
                     </ul>
-                </div>
+                </article>
 
-                <!-- Card 6 (Destaque Azul) -->
-                <div class="catalogo-card card-destaque-azul">
-                    <div class="icon-box">
+                <article class="catalogo-card card-destaque-azul" role="listitem">
+                    <div class="icon-box" aria-hidden="true">
                         <svg class="icon-svg" viewBox="0 0 24 24">${icons.calendar}</svg>
                     </div>
-                    <h3 class="card-titulo">MANUTENÇÃO<br>PREVENTIVA</h3>
-                    <p class="card-desc">O melhor reparo é aquele que não acontece. Planos de revisão para garantir que seu carro nunca te deixe na mão.</p>
-                    <button class="btn-ver-planos">VER PLANOS</button>
-                </div>
+                    <h3 class="card-titulo">REVISÃO<br>PREVENTIVA</h3>
+                    <p class="card-desc">O ponto de confiança em Cajazeiras 8. Planos de revisão para garantir que seu carro nunca te deixe na mão.</p>
+                    <button class="btn-ver-planos" aria-label="Ver planos de manutenção preventiva">AGENDAR REVISÃO</button>
+                </article>
 
             </div>
         </div>
@@ -103,13 +98,18 @@ const catalogoHTML = `
 
 export function inicializarCatalogo() {
     injetarCSS();
-
     const main = document.getElementById('conteudo-principal');
     if (!main) return;
 
     const div = document.createElement('div');
     div.innerHTML = catalogoHTML;
     main.appendChild(div.firstElementChild);
+
+    // Inicializar Animações (Carousel Mobile)
+    const section = document.getElementById('catalogo-servicos');
+    if (section) {
+        new CatalogoAnimacoes(section);
+    }
 }
 
 function injetarCSS() {

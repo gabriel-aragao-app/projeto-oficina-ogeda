@@ -6,34 +6,37 @@ import { HeroAnimacoes } from './hero-animacoes.js';
 
 // HTML do componente
 const htmlHero = `
-    <section id="hero-section">
-        <div class="hero-container container">
-            <!-- Conteúdo Esquerda -->
-            <div class="hero-esquerdo">
-                <span class="badget-label">OFICINA PREMIUM</span>
-                <h1 class="hero-titulo">
-                    MODERN,<br>
-                    <span class="italic">STYLISH &</span><br>
-                    <span class="destaque-azul">HIGH TECH</span>
-                </h1>
-                
-                <p class="hero-descricao">
-                    Especialistas em transmissão e diagnóstico digital avançado.
-                    A tecnologia que move o seu veículo com precisão cirúrgica.
-                </p>
+    <section id="hero-section" aria-labelledby="hero-title">
+    <div class="hero-container container">
+        
+        <div class="hero-esquerdo">
+            <span class="badget-label">REFERÊNCIA EM CAJAZEIRAS</span>
+            
+            <h1 id="hero-title" class="hero-titulo">
+                TECNOLOGIA,<br>
+                <span class="italic">CONFIANÇA &</span><br>
+                <span class="destaque-azul">PRECISÃO</span>
+            </h1>
+            
+            <p class="hero-descricao">
+                Especialista em <strong>câmbio automatizado</strong> e diagnóstico digital em <strong>Salvador</strong>. 
+                A tecnologia que move seu veículo com a precisão técnica da Ogeda Car Tech em Cajazeiras 8.
+            </p>
 
-                <div class="hero-botoes">
-                    <button class="btn-diagnostico">DIAGNÓSTICO</button>
-                    <button class="btn-servicos">NOSSOS SERVIÇOS</button>
-                </div>
-            </div>
-
-            <!-- Visual Direita (Imagem recortada) -->
-            <div class="hero-direito">
-                <div class="hero-imagem-container"></div>
+            <div class="hero-botoes">
+                <button class="btn-diagnostico" aria-label="Iniciar diagnóstico digital do veículo">DIAGNÓSTICO</button>
+                <button class="btn-servicos" aria-label="Ver lista completa de serviços automotivos">VER SERVIÇOS</button>
             </div>
         </div>
-    </section>
+
+        <div class="hero-direito">
+            <div class="hero-imagem-container" 
+                 role="img" 
+                 aria-label="Engrenagens de alta precisão de um câmbio automático moderno - Ogeda Car Tech Salvador">
+            </div>
+        </div>
+    </div>
+</section>
 `;
 
 export function inicializarHero() {

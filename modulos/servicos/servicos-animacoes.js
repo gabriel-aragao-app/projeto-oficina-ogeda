@@ -1,39 +1,88 @@
 /**
- * Módulo: Serviços Animações
+ * Módulo: Serviços Animações (Refined)
+ * Orquestra a entrada dos elementos e interações da grid.
  */
 
 export class ServicosAnimacoes {
     constructor(elementoSecao) {
         this.secao = elementoSecao;
-        this.cards = this.secao.querySelectorAll('.card-grande, .card-azul, .card-preventiva, .card-scanner');
-        this.init();
+
+        // Elementos para animar
+        this.header = this.secao.querySelector('.servicos-header');
+        this.titulos = this.header ? Array.from(this.header.children) : [];
+        this.cards = Array.from(this.secao.querySelectorAll('article')); // Pega todos os cards semânticos
+
+        this.injetarCSS();
+        this.prepararElementos();
+        this.initObserver();
     }
 
-    init() {
-        // Observer para animação de entrada ao rolar
-        const observer = new IntersectionObserver((entries) => {
+    injetarCSS() {
+        const linkId = 'css-servicos-anim';
+        if (!document.getElementById(linkId)) {
+            const link = document.createElement('link');
+            link.id = linkId;
+            link.rel = 'stylesheet';
+            link.href = './modulos/servicos/servicos-animacoes.css';
+            document.head.appendChild(link);
+        }
+    }
+
+    prepararElementos() {
+        // Oculta Cabeçalho
+        this.titulos.forEach(el => el.classList.add('serv-anim-hidden'));
+
+        // Oculta Cards
+        this.cards.forEach(card => card.classList.add('serv-anim-hidden'));
+    }
+
+    initObserver() {
+        // Observer Header
+        const observerHeader = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    this.animarEntrada();
-                    observer.disconnect();
+                    this.animarHeader();
+                    observerHeader.disconnect(); // Anima só uma vez
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.3 }); // 30% visível
 
-        observer.observe(this.secao);
+        if (this.header) observerHeader.observe(this.header);
+
+        // Observer Grid (Pode ser separado para animar os cards só quando eles aparecerem mesmo)
+        const observerGrid = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animarGrid();
+                    observerGrid.disconnect();
+                }
+            });
+        }, { threshold: 0.1 }); // 10% da grid visível
+
+        if (this.cards.length > 0) observerGrid.observe(this.cards[0].parentElement); // Observa o container grid
     }
 
-    animarEntrada() {
-        this.cards.forEach((card, index) => {
-            // Efeito de "Slide Up" suave com delay escalonado
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-
+    animarHeader() {
+        // Cascata nos elementos do header (Subtitulo, Titulo, Descrição)
+        this.titulos.forEach((el, index) => {
             setTimeout(() => {
-                card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 150); // 150ms de delay entre cada card
+                el.classList.add('serv-anim-active');
+            }, index * 200);
         });
+    }
+
+    animarGrid() {
+        // Cascata nos cards
+        this.cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('serv-anim-active');
+            }, index * 150 + 200); // Delay inicial de 200ms após header
+        });
+
+        // Adiciona efeito 'pulse' ao botão de orçamento após entrada
+        const btn = this.secao.querySelector('.btn-explorar');
+        if (btn) {
+            setTimeout(() => btn.classList.add('pulse-effect'), 2000);
+        }
     }
 }

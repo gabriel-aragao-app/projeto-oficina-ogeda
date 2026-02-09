@@ -1,11 +1,23 @@
 /* Global CSS - Ogeda Car Tech */
+/* 
+   Paleta de Cores 
+    --cor-fundo: #050510;
+    
+    --cor-fundo-secundario: #0F1218;
+    --cor-primaria: #2563eb;
+    
+    --cor-primaria-dark: #1e40af;
+    --cor-texto: #e2e8f0;
+    cor-texto-secundario: #94a3b8;
+*/
+
 
 :root {
     /* Paleta de Cores */
-    --cor-fundo: #050510;
+    --cor-fundo: #00072e;
     /* Dark Navy/Black */
-    --cor-fundo-secundario: #0F1218;
-    --cor-primaria: #2563eb;
+    --cor-fundo-secundario: #11193A;
+    --cor-primaria: #123499;
     /* Royal Blue (Vibrante) */
     --cor-primaria-dark: #1e40af;
     --cor-texto: #e2e8f0;

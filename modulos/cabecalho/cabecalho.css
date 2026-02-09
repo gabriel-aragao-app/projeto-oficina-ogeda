@@ -34,26 +34,15 @@
     /* Acima do menu mobile */
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    background-color: var(--cor-primaria);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 1.2rem;
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo-text {
-    color: white;
-    font-family: var(--fonte-titulo);
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: -0.5px;
+.logo:hover .logo-img {
+    transform: scale(1.05);
 }
 
 /* Navegação Desktop */

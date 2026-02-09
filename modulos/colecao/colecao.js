@@ -1,36 +1,42 @@
 /**
- * Módulo: Coleção de Serviços (Slider Interativo)
+ * Módulo: Coleção de Serviços (SEO & UX Optimized)
  */
 
+// SEO: Rótulos atualizados para termos de busca reais em Salvador
 const servicos = [
-    { label: "Preventiva", img: "./assets/servico-preventiva.png" },
-    { label: "Câmbio", img: "./assets/servico-cambio.png" },
-    { label: "Motor", img: "./assets/servico-motor.png" },
-    { label: "Suspensão", img: "./assets/servico-suspensao.png" },
-    { label: "Elétrica", img: "./assets/servico-eletrica.png" },
-    { label: "Ar Cond.", img: "./assets/servico-ar.png" },
-    { label: "Injeção", img: "./assets/servico-destaque-injecao.png" },
-    { label: "Freios", img: "./assets/hero-bg.png" } // Placeholder
+    { label: "Manutenção Preventiva", img: "./assets/servico-preventiva.png" },
+    { label: "Câmbio Automatizado", img: "./assets/servico-cambio.png" },
+    { label: "Mecânica de Motores", img: "./assets/servico-motor.png" },
+    { label: "Suspensão e Direção", img: "./assets/servico-suspensao.png" },
+    { label: "Elétrica Automotiva", img: "./assets/servico-eletrica.png" },
+    { label: "Ar Condicionado", img: "./assets/servico-ar.png" },
+    { label: "Injeção Eletrônica", img: "./assets/servico-destaque-injecao.png" },
+    { label: "Sistema de Freios", img: "./assets/servico-freios.png" }
 ];
 
 const colecaoHTML = `
-    <section id="colecao-servicos">
+    <section id="colecao-servicos" aria-labelledby="colecao-titulo-principal">
         <div class="container">
             <div class="colecao-header">
-                <span class="colecao-subtitulo">Soluções Completas</span>
-                <h2 class="colecao-titulo">Nossa Coleção de Serviços</h2>
+                <span class="colecao-subtitulo">Referência Técnica em Salvador</span>
+                <h2 id="colecao-titulo-principal" class="colecao-titulo">Nossa Coleção de Serviços em Cajazeiras</h2>
             </div>
 
             <div class="colecao-carousel-wrapper">
-                <!-- Botão Esquerda -->
-                <button class="nav-btn-colecao nav-btn-prev" id="btn-col-prev" aria-label="Anterior">❮</button>
+                <button class="nav-btn-colecao nav-btn-prev" id="btn-col-prev" aria-label="Ver serviços anteriores">❮</button>
 
-                <!-- Track Cards -->
-                <div class="colecao-grid" id="colecao-track">
+                <div class="colecao-grid" id="colecao-track" role="list">
                     ${servicos.map(s => `
-                        <div class="col-card" onclick="irParaCatalogo()">
-                            <img src="${s.img}" alt="${s.label}" class="col-card-bg" onerror="this.style.opacity=0.1">
-                            <div class="col-card-overlay"></div>
+                        <div class="col-card" 
+                             onclick="irParaCatalogo()" 
+                             role="listitem" 
+                             tabindex="0" 
+                             aria-label="Saiba mais sobre ${s.label} na Ogeda Car Tech">
+                            <img src="${s.img}" 
+                                 alt="Serviço de ${s.label} em Salvador - Ogeda Car Tech" 
+                                 class="col-card-bg" 
+                                 onerror="this.style.opacity=0.1"
+                                 loading="lazy"> <div class="col-card-overlay"></div>
                             <div class="col-card-conteudo">
                                 <span class="col-card-label">${s.label}</span>
                             </div>
@@ -38,31 +44,25 @@ const colecaoHTML = `
                     `).join('')}
                 </div>
 
-                <!-- Botão Direita -->
-                <button class="nav-btn-colecao nav-btn-next" id="btn-col-next" aria-label="Próximo">❯</button>
+                <button class="nav-btn-colecao nav-btn-next" id="btn-col-next" aria-label="Ver próximos serviços">❯</button>
             </div>
         </div>
     </section>
 `;
 
-// Função Global de Redirecionamento
+// Função Global de Redirecionamento (Mantida)
 window.irParaCatalogo = function () {
     const catalogo = document.getElementById('catalogo-servicos') || document.getElementById('servicos-especializados');
     if (catalogo) {
         catalogo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-        console.warn('Seção de catálogo não encontrada para rolagem.');
     }
 };
 
 export function inicializarColecao() {
     injetarCSS();
-
-    // Inserção
     const hero = document.getElementById('hero-section');
     const main = document.getElementById('conteudo-principal') || document.getElementById('aplicacao');
 
-    // Elemento container temporário
     const div = document.createElement('div');
     div.innerHTML = colecaoHTML;
     const novoElemento = div.firstElementChild;
@@ -73,7 +73,6 @@ export function inicializarColecao() {
         main.appendChild(novoElemento);
     }
 
-    // Inicializar Lógica dos Botões
     initSlider();
 }
 

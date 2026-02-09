@@ -7,8 +7,7 @@ const cabecalhoHTML = `
         <div class="container cabecalho-container">
             <!-- Logo -->
             <a href="#" class="logo">
-                <div class="logo-icon">O</div>
-                <span class="logo-text">OGEDA CAR TECH</span>
+                <img src="./assets/logo-header.png" alt="Ogeda Car Tech" class="logo-img">
             </a>
 
             <!-- Navegação Desktop -->

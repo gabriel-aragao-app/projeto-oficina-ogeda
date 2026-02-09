@@ -1,75 +1,76 @@
 /**
  * Módulo: Serviços Especializados
- * Controlador da seção GRID de serviços
+ * Controlador da seção GRID de serviços com SEO Local Agressivo
  */
 import { ServicosAnimacoes } from './servicos-animacoes.js';
 
 const htmlServicos = `
-    <section id="servicos-especializados">
+    <section id="servicos-especializados" aria-labelledby="servicos-titulo-seo">
         <div class="container">
-            <!-- Cabeçalho -->
-            <div class="servicos-header">
-                <span class="subtitulo-label"> ESPECIALIDADES </span>
-                <h2 class="titulo-principal">
-                    Referência em Câmbio <span class="destaque-texto">Dualogic, iMotion e EasyR</span> na região de Cajazeiras.
+            <header class="servicos-header">
+                <span class="subtitulo-label"> ESPECIALIDADES DE ELITE </span>
+                <h2 id="servicos-titulo-seo" class="titulo-principal">
+                    Referência em Câmbio <span class="destaque-texto">Dualogic, iMotion e EasyR</span> em Cajazeiras
                 </h2>
                 <p class="descricao-texto">
-                    Se você está em Salvador e seu câmbio apresentou falha, não precisa atravessar a cidade. 
-                    A <strong>Ogeda Car Tech</strong> é a oficina mecânica em Cajazeiras especializada em transmissões automatizadas.
+                    Não precisa atravessar <strong>Salvador</strong> para consertar seu carro. 
+                    A <strong>Ogeda Car Tech</strong> é a oficina mecânica em <strong>Cajazeiras</strong> especialista em transmissões automatizadas e diagnósticos de alta complexidade.
                 </p>
-            </div>
+            </header>
 
-            <!-- Grid Bento -->
             <div class="servicos-grid">
                 
-                <!-- Card Grande: Troca de Óleo -->
-                <div class="card-grande">
-                    <img src="./assets/servico-destaque-oleo.png" alt="Troca de Óleo" class="card-bg-img">
+                <article class="card-grande">
+                    <img src="./assets/servico-destaque-oleo.png" 
+                         alt="Troca de óleo de câmbio automatizado em Salvador - Ogeda Car Tech" 
+                         class="card-bg-img"
+                         loading="lazy">
                     <div class="overlay-gradiente"></div>
                     <div class="card-conteudo">
-                        <span class="tag-premium">SERVIÇO PREMIUM</span>
+                        <span class="tag-premium">TECNOLOGIA FLUSHING</span>
                         <h3 class="card-titulo">TROCA DE ÓLEO<br>DE CÂMBIO</h3>
                         <p class="card-desc">
-                            Equipamentos de flushing e fluidos originais para maior durabilidade do seu sistema automatizado.
+                            Fluídos originais e remoção total de impurezas para máxima durabilidade do seu <strong>Dualogic ou iMotion</strong>.
                         </p>
                     </div>
-                </div>
+                </article>
 
-                <!-- Card Azul: Injeção -->
-                <div class="card-azul">
-                    <img src="./assets/servico-destaque-injecao.png" alt="" class="card-bg-icon">
+                <article class="card-azul">
+                    <img src="./assets/servico-destaque-injecao.png" alt="" class="card-bg-icon" aria-hidden="true">
                     <div class="card-conteudo-azul">
                         <h3>INJEÇÃO ELETRÔNICA</h3>
-                        <p>Diagnóstico computadorizado de falhas e limpeza técnica de bicos injetores.</p>
-                        <button class="btn-explorar">ORÇAMENTO</button>
+                        <p>Diagnóstico computadorizado para economia de combustível e performance ideal.</p>
+                        <button class="btn-explorar" aria-label="Solicitar orçamento para injeção eletrônica">ORÇAMENTO</button>
                     </div>
-                </div>
+                </article>
 
-                <!-- Container Baixo (2 Cards) -->
                 <div class="container-baixo">
                     
-                <!-- Card Preventiva -->
-                <div class="card-preventiva">
-                    <img src="./assets/servico-preventiva.png" alt="Manutenção Preventiva" class="card-bg-img">
-                    <div class="overlay-gradiente"></div>
-                    <div class="card-conteudo">
-                        <h3>MANUTENÇÃO PREVENTIVA</h3>
-                        <p>Evite surpresas e mantenha a performance.</p>
-                    </div>
-                </div>
+                    <article class="card-preventiva">
+                        <img src="./assets/servico-preventiva.png" 
+                             alt="Manutenção preventiva automotiva em Cajazeiras 8" 
+                             class="card-bg-img"
+                             loading="lazy">
+                        <div class="overlay-gradiente"></div>
+                        <div class="card-conteudo">
+                            <h3>REVISÃO PREVENTIVA</h3>
+                            <p>O ponto de confiança em <strong>Cajazeiras 8</strong> para sua segurança.</p>
+                        </div>
+                    </article>
 
-                    <!-- Card Scanner -->
-                    <div class="card-scanner">
-                        <img src="./assets/servico-destaque-scanner.png" alt="Scanner Original" class="card-bg-img">
+                    <article class="card-scanner">
+                        <img src="./assets/servico-destaque-scanner.png" 
+                             alt="Scanner automotivo original de última geração" 
+                             class="card-bg-img"
+                             loading="lazy">
                         <div class="overlay-gradiente"></div>
                         <div class="card-conteudo">
                             <h3>SCANNER ORIGINAL</h3>
-                            <p>Diagnóstico preciso com tecnologia de ponta.</p>
+                            <p>Leitura precisa de falhas com equipamentos de padrão concessionária.</p>
                         </div>
-                    </div>
+                    </article>
 
                 </div>
-
             </div>
         </div>
     </section>
@@ -79,18 +80,13 @@ export function inicializarServicos() {
     injetarCSS();
 
     const main = document.getElementById('conteudo-principal');
-    if (!main) {
-        console.error('Elemento principal não encontrado.');
-        return;
-    }
+    if (!main) return;
 
-    // Adiciona ao final do main (append) em vez de substituir, pois o Hero já está lá
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlServicos;
-    main.appendChild(tempDiv.firstElementChild);
+    // Uso de insertAdjacentHTML para não sobrescrever o conteúdo atual e garantir a ordem
+    main.insertAdjacentHTML('beforeend', htmlServicos);
 
     const section = document.getElementById('servicos-especializados');
-    if (section) {
+    if (section && typeof ServicosAnimacoes === 'function') {
         new ServicosAnimacoes(section);
     }
 }

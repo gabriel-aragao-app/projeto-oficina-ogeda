@@ -1,0 +1,79 @@
+/* Módulo: Hero Animações Avançadas */
+
+/* Estado Inicial: Elementos Escondidos (Aplicado via JS para evitar invisibilidade sem JS) */
+.hero-anim-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+/* Estado Ativo: Elementos Visíveis */
+.hero-anim-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variações de Direção */
+.hero-anim-left {
+    transform: translateX(-30px);
+}
+
+.hero-anim-right {
+    transform: translateX(30px);
+}
+
+.hero-anim-zoom {
+    transform: scale(0.95);
+}
+
+.hero-anim-show.hero-anim-left,
+.hero-anim-show.hero-anim-right {
+    transform: translateX(0);
+}
+
+.hero-anim-show.hero-anim-zoom {
+    transform: scale(1);
+}
+
+/* Animação de Flutuar (Imagem Principal) */
+@keyframes floatHero {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero-float-effect {
+    animation: floatHero 6s ease-in-out infinite;
+}
+
+/* Destaques (Serviços Cards) - Staggered */
+.hero-servicos-lista .servico-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.hero-servicos-lista.anim-cards-active .servico-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Optimizations */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-anim-hidden,
+    .hero-float-effect {
+        animation: none;
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}

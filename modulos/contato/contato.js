@@ -26,7 +26,7 @@ const contatoHTML = `
     <section id="contato-diagnostico" aria-labelledby="contato-titulo-seo">
         <div class="container">
             <div class="contato-header">
-                <span class="label-agendamento">ATENDIMENTO EM SALVADOR</span>
+                <span class="label-agendamento">REFERÊNCIA EM CÂMBIO AUTOMATIZADO EM SALVADOR</span>
                 <h2 id="contato-titulo-seo" class="contato-titulo">Diagnóstico & Orçamento Rápido</h2>
             </div>
 
@@ -93,8 +93,8 @@ function renderizarQuiz() {
         wrapper.innerHTML = `
             <div class="step-content">
                 ${icons.clipboard}
-                <h3 class="quiz-titulo">Check-up Digital Gratuito</h3>
-                <p class="quiz-desc">Receba um pré-direcionamento técnico em menos de 1 minuto.</p>
+                <h3 class="quiz-titulo">Triagem Digital</h3>
+                <p class="quiz-desc">Responda 3 perguntas rápidas e adiante seu orçamento pelo WhatsApp</p>
                 <button class="btn-start-quiz" id="btn-iniciar">INICIAR AGORA</button>
             </div>
         `;
@@ -137,7 +137,7 @@ function renderizarQuiz() {
             <div class="step-content">
                 <h3 class="quiz-titulo">Seu nome para o atendimento</h3>
                 <input type="text" id="input-nome" class="quiz-input" placeholder="Seu Nome">
-                <button class="btn-start-quiz" id="btn-enviar">RECEBER PRÉ-DIAGNÓSTICO</button>
+                <button class="btn-start-quiz" id="btn-enviar">RECEBER PRÉ-ATENDIMENTO</button>
                 <div class="progress-dots"><div class="dot"></div><div class="dot"></div><div class="dot active"></div></div>
             </div>
         `;
@@ -150,7 +150,7 @@ function renderizarQuiz() {
         wrapper.innerHTML = `
             <div class="step-content">
                 <h3 class="quiz-titulo">Tudo pronto!</h3>
-                <p class="quiz-desc">Redirecionando para o WhatsApp do Luciano na Ogeda Car Tech...</p>
+                <p class="quiz-desc">Redirecionando para o WhatsApp da Oficina - Ogeda Car Tech...</p>
                 <div class="loader-simple"></div>
             </div>
         `;
@@ -163,8 +163,8 @@ function finalizarQuiz() {
     quizState.step++;
     renderizarQuiz();
     const { carro, problema, nome } = quizState.data;
-    const phone = "5571981303232"; // Número real do Luciano
-    const text = `Olá, Luciano! Me chamo *${nome}* e vim pelo seu site.\nTenho um *${carro}* apresentando: *${problema}*.\nGostaria de agendar um serviço ou solicitar um orçamento.`;
+    const phone = "5571981303232"; // Número real
+    const text = `Olá! Me chamo *${nome}* e vim pelo site da oficina.\nTenho um *${carro}* apresentando: *${problema}*.\nGostaria de solicitar um orçamento.`;
 
     setTimeout(() => {
         window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');

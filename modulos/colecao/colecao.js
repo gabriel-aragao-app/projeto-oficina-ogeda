@@ -8,8 +8,6 @@ const servicos = [
     { label: "Câmbio Automatizado", img: "./assets/servico-cambio.png" },
     { label: "Mecânica de Motores", img: "./assets/servico-motor.png" },
     { label: "Suspensão e Direção", img: "./assets/servico-suspensao.png" },
-    { label: "Elétrica Automotiva", img: "./assets/servico-eletrica.png" },
-    { label: "Ar Condicionado", img: "./assets/servico-ar.png" },
     { label: "Injeção Eletrônica", img: "./assets/servico-destaque-injecao.png" },
     { label: "Sistema de Freios", img: "./assets/servico-freios.png" }
 ];

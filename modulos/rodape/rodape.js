@@ -5,7 +5,8 @@
 const icons = {
     settings: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>',
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>',
-    whatsapp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>'
+    whatsapp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
+    facebook: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>'
 };
 
 const rodapeHTML = `
@@ -24,6 +25,7 @@ const rodapeHTML = `
                     </p>
                     <div class="social-row">
                         <a href="https://instagram.com/ogedacartech" target="_blank" rel="noopener" class="social-btn" aria-label="Siga-nos no Instagram">${icons.instagram}</a>
+                        <a href="https://www.facebook.com/ogedacartech/?locale=pt_BR" target="_blank" rel="noopener" class="social-btn" aria-label="Siga-nos no Facebook">${icons.facebook}</a>
                         <a href="https://wa.me/5571981303232" target="_blank" rel="noopener" class="social-btn" aria-label="Fale conosco pelo WhatsApp">${icons.whatsapp}</a>
                     </div>
                 </div>
@@ -39,18 +41,6 @@ const rodapeHTML = `
                     </ul>
                 </nav>
 
-                <div class="coluna-tags">
-                    <h4 class="coluna-titulo">ATENDIMENTO EM SALVADOR</h4>
-                    <div class="tags-cloud">
-                        <span class="tag-item">Cajazeiras (5, 8, 10 e 11)</span>
-                        <span class="tag-item">Castelo Branco</span>
-                        <span class="tag-item">Pau da Lima</span>
-                        <span class="tag-item">Águas Claras</span>
-                        <span class="tag-item">Fazenda Grande</span>
-                        <span class="tag-item">Sussuarana</span>
-                    </div>
-                </div>
-
                 <div class="coluna-horario">
                     <h4 class="coluna-titulo">FUNCIONAMENTO</h4>
                     <address class="horario-card">
@@ -62,7 +52,7 @@ const rodapeHTML = `
                             <span class="dia">Sábado:</span>
                             <span class="hora">08:00 - 12:00</span>
                         </div>
-                        <p class="endereco-minimo">Rua Dep. Herculano de Menezes, 36. Cajazeiras 8.</p>
+                        <p class="observacao-expediente">*Exceto Domingo e Feriados.</p>
                     </address>
                 </div>
 

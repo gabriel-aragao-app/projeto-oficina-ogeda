@@ -9,7 +9,7 @@ const content = {
     // SEO: Reforço de Cajazeiras 8 como ponto de referência técnica e didática
     description: "Nossa matriz em <span class='text-gold'>Cajazeiras 8</span> é equipada com o que há de mais moderno para garantir a segurança do seu veículo na região.",
     stats: [
-        { value: "2016", label: "Desde" }, // Experiência comprovada
+        { value: "2019", label: "Desde" }, // Experiência comprovada
         { value: "SCANNER", label: "Tecnologia" } // Foco no diferencial técnico
     ],
     address: {
@@ -29,7 +29,7 @@ const localizacaoHTML = `
                     <div class="loc-map-card group">
                         <div class="loc-map-inner">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3563467406734!2d-38.411656!3d-12.9105435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716109968a35639%3A0xc3f8e56314f2e563!2sOgeda%20Car%20Tech!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11000.050196176177!2d-38.40843769946494!3d-12.900966571098087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71611dd8375b807%3A0xdc2f197d7eb7eea4!2sOgeda%20Car%20Tech!5e0!3m2!1spt-BR!2sbr!4v1772465452808!5m2!1spt-BR!2sbr"
                                 class="loc-iframe" 
                                 frameborder="0" 
                                 scrolling="no" 
@@ -84,9 +84,14 @@ const localizacaoHTML = `
                                     ${content.address.text}
                                 </p>
 
-                                <a href="${content.address.link}" target="_blank" rel="noopener" class="btn-gps-action" aria-label="Abrir rota no Google Maps">
-                                    <span class="btn-text-fix">Abrir no GPS</span>
-                                </a>
+                                <div class="botoes-gps-container">
+                                    <a href="${content.address.link}" target="_blank" rel="noopener" class="btn-gps-action google" aria-label="Abrir rota no Google Maps">
+                                        <span class="btn-text-fix">Abrir no GPS</span>
+                                    </a>
+                                    <a href="https://ul.waze.com/ul?place=ChIJB7h1g90RFgcRpO63fn0ZL9w&ll=-12.89795070%2C-38.41211560&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" rel="noopener" class="btn-gps-action waze" aria-label="Abrir rota no Waze">
+                                        <span class="btn-text-fix">Abrir com Waze</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

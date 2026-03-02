@@ -24,8 +24,8 @@ const htmlHero = `
             </p>
 
             <div class="hero-botoes">
-                <button class="btn-diagnostico" aria-label="Iniciar diagnóstico digital do veículo">DIAGNÓSTICO</button>
-                <button class="btn-servicos" aria-label="Ver lista completa de serviços automotivos">VER SERVIÇOS</button>
+                <a href="#contato-diagnostico" class="btn-diagnostico" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;" aria-label="Iniciar diagnóstico digital do veículo">DIAGNÓSTICO</a>
+                <a href="#servicos-especializados" class="btn-servicos" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;" aria-label="Ver lista completa de serviços automotivos">VER SERVIÇOS</a>
             </div>
         </div>
 

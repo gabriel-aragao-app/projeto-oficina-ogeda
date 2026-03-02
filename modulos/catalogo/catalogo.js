@@ -39,7 +39,7 @@ const catalogoHTML = `
                         <svg class="icon-svg" viewBox="0 0 24 24">${icons.lightning}</svg>
                     </div>
                     <h3 class="card-titulo">INJEÇÃO<br>ELETRÔNICA</h3>
-                    <p class="card-desc">Diagnóstico avançado de bicos e sensores. Redução de consumo para motoristas de aplicativo em Cajazeiras.</p>
+                    <p class="card-desc">Diagnóstico avançado de sistemas de injeção eletrônica, para melhorar o consumo, mantendo seu carro sempre dentro das características de fábrica.</p>
                     <ul class="card-lista">
                         <li>Teste de Vazão</li>
                         <li>Limpeza Ultrassônica</li>

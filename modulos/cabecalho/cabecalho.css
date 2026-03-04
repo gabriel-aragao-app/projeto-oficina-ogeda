@@ -112,7 +112,8 @@
     cursor: pointer;
     z-index: 1100;
     /* Acima do overlay */
-    padding: 5px;
+    padding: 15px;
+    /* Alvo Seguro para Touch > 44px */
 }
 
 /* Dropdown Mobile Overlay */
@@ -138,6 +139,25 @@
 .menu-mobile-overlay.active {
     transform: translateY(0);
     opacity: 1;
+}
+
+.menu-close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1200;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-close-btn:hover {
+    color: var(--cor-primaria);
+    transform: scale(1.1);
 }
 
 .nav-mobile-list {
@@ -178,6 +198,9 @@
 }
 
 .nav-mobile-link {
+    display: inline-block;
+    padding: 15px 20px;
+    /* Alvo Touch Seguro 44px+ */
     font-size: 1.8rem;
     font-weight: 800;
     color: white;

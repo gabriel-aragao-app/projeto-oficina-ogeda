@@ -10,7 +10,6 @@ const content = {
     description: "Nossa matriz em <span class='text-gold'>Cajazeiras 8</span> é equipada com o que há de mais moderno para garantir a segurança do seu veículo na região.",
     stats: [
         { value: "2019", label: "Desde" }, // Experiência comprovada
-        { value: "SCANNER", label: "Tecnologia" } // Foco no diferencial técnico
     ],
     address: {
         title: "Onde nos encontrar?",

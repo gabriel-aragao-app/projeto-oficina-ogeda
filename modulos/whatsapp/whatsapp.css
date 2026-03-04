@@ -63,14 +63,16 @@
 /* Responsividade: Menor em telas pequenas e ajustado no canto */
 @media (max-width: 768px) {
     .btn-whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
+        width: 55px;
+        /* WCAG Safe Minimum 44px, using 55px */
+        height: 55px;
+        bottom: 25px;
+        /* Safe space from iOS Bottom Bar */
+        right: 15px;
     }
 
     .icon-wa-float {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
     }
 }

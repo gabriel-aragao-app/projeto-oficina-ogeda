@@ -175,38 +175,26 @@
 }
 
 /* Mobile Responsive - Carousel Mode */
+/* Mobile Responsive */
 @media (max-width: 768px) {
+
+    .catalogo-grid,
     .catalogo-grid.mobile-carousel-active {
-        display: flex;
-        overflow-x: hidden;
-        /* JavaScript controls scroll */
-        gap: 30px;
-        padding: 20px 0;
-        /* Space for hover effects */
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .catalogo-card {
         width: 100%;
-        cursor: grab;
+        max-width: 100%;
     }
 
-    .catalogo-grid.mobile-carousel-active .catalogo-card {
-        flex: 0 0 85vw;
-        /* Almost full width with peek */
-        width: 85vw;
-        max-width: 350px;
-        /* Limit on larger mobiles */
-    }
-
-    /* Adjust padding for container to allow cards to flow edge-to-edge if needed */
     #catalogo-servicos .container {
-        padding-left: 0;
-        padding-right: 0;
-        overflow: hidden;
-        /* Hide overflow from container */
-    }
-
-    .catalogo-grid.mobile-carousel-active {
-        padding-left: 7.5vw;
-        /* Center the first card initially */
-        padding-right: 7.5vw;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow: visible;
     }
 }
 

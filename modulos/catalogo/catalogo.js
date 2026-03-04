@@ -88,7 +88,7 @@ const catalogoHTML = `
                     </div>
                     <h3 class="card-titulo">REVISÃO<br>PREVENTIVA</h3>
                     <p class="card-desc">O ponto de confiança em Cajazeiras 8. Planos de revisão para garantir que seu carro nunca te deixe na mão.</p>
-                    <button class="btn-ver-planos" aria-label="Ver planos de manutenção preventiva">AGENDAR REVISÃO</button>
+                    <a href="#contato-diagnostico" class="btn-ver-planos" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;" aria-label="Ver planos de manutenção preventiva">AGENDAR REVISÃO</a>
                 </article>
 
             </div>
@@ -105,10 +105,10 @@ export function inicializarCatalogo() {
     div.innerHTML = catalogoHTML;
     main.appendChild(div.firstElementChild);
 
-    // Inicializar Animações (Carousel Mobile)
+    // Inicializar Animações (Carousel Mobile) - DESATIVADO PARA EXIBIR LISTA COMPLETA
     const section = document.getElementById('catalogo-servicos');
     if (section) {
-        new CatalogoAnimacoes(section);
+        // new CatalogoAnimacoes(section);
     }
 }
 

@@ -1,0 +1,107 @@
+/* Módulo: Galeria de Fotos */
+
+#galeria-fotos {
+    padding: 80px 0;
+    background-color: #0b0e14;
+    /* Mantendo estética escura */
+}
+
+.galeria-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.label-galeria {
+    display: inline-block;
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.galeria-titulo {
+    color: white;
+    font-size: 2.5rem;
+    font-family: var(--fonte-titulo);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Grid Layout */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 250px;
+    gap: 15px;
+}
+
+/* Layout Responsivo e Alternado */
+@media (min-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 250px;
+    }
+
+    .item-grande {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .item-normal {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+.galeria-item {
+    position: relative;
+    border-radius: 8px;
+    /* rounded-sm */
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #1a1f2e;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+.galeria-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(11, 14, 20, 0.4);
+    /* bg-brand-black/40 */
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.galeria-item:hover .galeria-overlay {
+    opacity: 1;
+}
+
+.btn-visualizar {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: 1px solid var(--cor-primaria);
+    /* border-brand-gold */
+    padding: 8px 16px;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 4px;
+}

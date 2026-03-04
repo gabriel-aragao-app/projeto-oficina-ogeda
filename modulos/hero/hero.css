@@ -245,7 +245,12 @@
         width: 100%;
         text-align: center;
         /* Centralizar texto no mobile */
+        padding-left: 15px;
+        padding-right: 15px;
         padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-desc {

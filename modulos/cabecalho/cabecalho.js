@@ -33,6 +33,7 @@ const cabecalhoHTML = `
 
         <!-- Overlay Menu Mobile -->
         <div class="menu-mobile-overlay" id="menu-mobile-overlay">
+            <button class="menu-close-btn" aria-label="Fechar Menu" onclick="fecharMenu()">✕</button>
             <ul class="nav-mobile-list">
                 <li class="nav-mobile-item"><a href="#" class="nav-mobile-link" onclick="fecharMenu()">Início</a></li>
                 <li class="nav-mobile-item"><a href="#servicos-especializados" class="nav-mobile-link" onclick="fecharMenu()">Serviços</a></li>
@@ -55,7 +56,7 @@ window.fecharMenu = function () {
     if (overlay) {
         overlay.classList.remove('active');
         menuAberto = false;
-        if (btn) btn.innerHTML = '☰';
+        // if (btn) btn.innerHTML = '☰';
 
         // Retorna header ao estado normal (transparente se Topo)
         if (window.scrollY <= 50) header.classList.remove('scrolled');
@@ -93,11 +94,11 @@ export function inicializarCabecalho() {
 
             if (menuAberto) {
                 overlay.classList.add('active');
-                btnMobile.innerHTML = '✕'; // Ícone Fechar
+                // btnMobile.innerHTML = '✕'; // Substituído pelo botão explícito
                 header.classList.add('scrolled'); // Garante fundo escuro
             } else {
                 overlay.classList.remove('active');
-                btnMobile.innerHTML = '☰';
+                // btnMobile.innerHTML = '☰';
                 if (window.scrollY <= 50) header.classList.remove('scrolled');
             }
         });

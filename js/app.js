@@ -11,6 +11,7 @@ import { inicializarServicos } from '../modulos/servicos/servicos.js';
 import { inicializarMarcas } from '../modulos/marcas/marcas.js';
 import { inicializarCatalogo } from '../modulos/catalogo/catalogo.js';
 import { inicializarSobre } from '../modulos/sobre/sobre.js';
+import { inicializarGaleria } from '../modulos/galeria/galeria.js';
 import { inicializarAvaliacoes } from '../modulos/avaliacoes/avaliacoes.js';
 import { inicializarContato } from '../modulos/contato/contato.js';
 import { inicializarLocalizacao } from '../modulos/localizacao/localizacao.js';
@@ -44,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         inicializarSobre();
         console.log('Módulo Sobre carregado.');
 
+        inicializarGaleria();
+        console.log('Módulo Galeria carregado.');
+
         inicializarAvaliacoes();
         console.log('Módulo Avaliações carregado.');
 
@@ -59,7 +63,36 @@ document.addEventListener('DOMContentLoaded', () => {
         inicializarWhatsapp();
         console.log('Módulo WhatsApp carregado.');
 
+        // Inicializar Fade-Up das Seções (Lazy Rendering UX)
+        inicializarFadeAnimations();
+        console.log('Animações base ativadas.');
+
     } catch (erro) {
         console.error('Erro Crítico ao carregar módulos:', erro);
     }
 });
+
+/**
+ * Função Global de Animações (Scroll Fade)
+ */
+function inicializarFadeAnimations() {
+    // Configura o observador para disparar quando a seção aparecer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Roda apenas 1 vez (desempenho)
+            }
+        });
+    }, {
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+    });
+
+    // Anexar a classe invisível a grandes blocos estáticos para animar
+    const blocos = document.querySelectorAll('section > .container, #rodape-principal .container');
+    blocos.forEach(bloco => {
+        bloco.classList.add('animate-fade-up');
+        observer.observe(bloco);
+    });
+}

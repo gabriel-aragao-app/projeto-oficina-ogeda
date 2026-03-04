@@ -40,7 +40,7 @@ const htmlServicos = `
                     <div class="card-conteudo-azul">
                         <h3>INJEÇÃO ELETRÔNICA</h3>
                         <p>Diagnóstico computadorizado para economia de combustível e performance ideal.</p>
-                        <button class="btn-explorar" aria-label="Solicitar orçamento para injeção eletrônica">ORÇAMENTO</button>
+                        <a href="#contato-diagnostico" class="btn-explorar" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;" aria-label="Solicitar orçamento para injeção eletrônica">ORÇAMENTO</a>
                     </div>
                 </article>
 

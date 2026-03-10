@@ -3,7 +3,7 @@
  */
 
 const whatsappHTML = `
-    <a href="https://wa.me/5571999999999?text=Olá!%20Vim%20pelo%20site%20da%20Ogeda%20Car%20Tech." 
+    <a href="https://wa.me/5571981303232?text=Olá!%20Vim%20pelo%20site%20da%20Ogeda%20Car%20Tech." 
        target="_blank" 
        class="btn-whatsapp-float" 
        aria-label="Falar no WhatsApp"

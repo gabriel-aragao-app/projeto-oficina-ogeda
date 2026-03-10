@@ -14,7 +14,7 @@ const content = {
     address: {
         title: "Onde nos encontrar?",
         // Endereço oficial conforme briefing da Ogeda Car Tech
-        text: "Rua Dep. Herculano de Menezes, n° 36, Cajazeiras 8 - Salvador/BA",
+        text: "Rua Dep. Herculano de Menezes, n° 116, Cajazeiras 8 - Salvador/BA",
         link: "https://www.google.com/maps/dir//Ogeda+Car+Tech" // Link de GPS
     }
 };
